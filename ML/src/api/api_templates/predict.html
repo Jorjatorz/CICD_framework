@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #defffd;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/static/logo.png" width=200>
+    <hr>
+    <h1>Predict</h1>
+    <hr>
+    <p><b>Current date: </b>2/1/2017</p>
+    <div>
+        <label>Introduce the number of days you will like to predict: </label>
+        <input type="number" id="n_days" min=1 max=30 value="1">
+        <button type="button" onclick="predict()">Predict!</button>
+    </div>
+    <div>
+        {% if predictions is defined %}
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Prediction</th>
+            </tr>
+            {% for val in predictions %}
+            <tr>
+                <td>{{ dates[loop.index0] }}</td>
+                <td>{{ val }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        {% endif %}
+    </div>
+</body>
+
+<script>
+    function predict() {
+        var days = document.getElementById("n_days").value;
+        window.location.href = '?num_days=' + days
+    }
+</script>
+
+</html>

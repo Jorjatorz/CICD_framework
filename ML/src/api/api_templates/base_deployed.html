@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <img src="/static/logo.png" width=200>
+    <hr>
+    <h1>Deployed Model</h1>
+    <hr>
+    <h3>Test set score</h3>
+    <ul>
+        {% for key, val in test_score.items() %}
+        <li>
+            <span><b>{{ key }}</b></span>
+            <span>{{ val }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    {% for key, val in model_info.items() %}
+    <h3>{{ key }}</h2>
+        <p>{{ val }}</p>
+        {% endfor %}
+</body>
+
+</html>

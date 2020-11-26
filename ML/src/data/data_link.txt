@@ -1,0 +1,2 @@
+Download the training and test data from the following link. Place it inside this folder (Data folder)
+https://drive.google.com/drive/folders/1Hu4m6aXiHtojUsqJLLRt6mW9isS09XXt?usp=sharing
